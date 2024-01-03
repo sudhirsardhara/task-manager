@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="dashboard">
+      <h2>Upcoming Tasks</h2>
+      <ul id="upcomingTasks"></ul>
+      <h2>Overdue Tasks</h2>
+      <ul id="overdueTasks"></ul>
+      <h2>Completed Tasks</h2>
+      <ul id="completedTasks"></ul>
+    </div>
+
+    <div id="taskManagement">
+      <h2>Add/Edit Task</h2>
+      <form id="taskForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" required>
+        <label for="description">Description:</label>
+        <textarea id="description"></textarea>
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" required>
+        <label for="priority">Priority:</label>
+        <select id="priority">
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+        <button type="button" onclick="addEditTask()">Add/Edit Task</button>
+      </form>
+    </div>
+
+    <div id="taskList">
+      <h2>All Tasks</h2>
+      <ul id="allTasks"></ul>
+    </div>
+
+    <div id="searchFilter">
+      <input type="text" id="searchInput" placeholder="Search tasks...">
+      <select id="priorityFilter">
+        <option value="">All</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <button onclick="filterTasks()">Filter</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
